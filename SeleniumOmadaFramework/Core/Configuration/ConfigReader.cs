@@ -28,9 +28,13 @@ namespace SeleniumOmadaFramework.Core.Configuration
             }
         }
 
+        public static TimeSpan CloseBrowserTabWaitTimeout => TimeSpan.FromSeconds(Convert.ToInt32(ConfigurationManager.AppSettings["CloseBrowserTabWaitTimeout"]));
+
         public static string HomePageUrl => ConfigurationManager.AppSettings["HomepageUrl"];
 
         public static string FileDownloadLocation => ConfigurationManager.AppSettings["FileDownloadLocation"];
+
+        public static TimeSpan NewBrowserTabWaitTimeout => TimeSpan.FromSeconds(Convert.ToInt32(ConfigurationManager.AppSettings["NewBrowserTabWaitTimeout"]));
 
         public static string ScreenshotsLocation => ConfigurationManager.AppSettings["ScreenshotsLocation"];
 

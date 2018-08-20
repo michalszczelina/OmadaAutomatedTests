@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
+using SeleniumOmadaFramework.Core.Configuration;
 using SeleniumOmadaFramework.Core.Driver;
 using SeleniumOmadaFramework.Core.Extensions;
 using System;
@@ -15,7 +16,8 @@ namespace SeleniumOmadaFramework.Pages.Implementations.Base
 
         public void CloseCurrentTab()
         {
-            Driver.CloseCurrentTab();
+            var tabCloseTimeout = ConfigReader.CloseBrowserTabWaitTimeout;
+            Driver.CloseCurrentTab(tabCloseTimeout);
         }
 
         public string GetUrl()

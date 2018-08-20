@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
+using System;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading;
@@ -8,18 +9,26 @@ namespace SeleniumOmadaFramework.Core.Extensions
 {
     public static class SeleniumWebDriverExtensions
     {
-        public static void CloseCurrentTab(this IWebDriver driver)
+        public static void CloseCurrentTab(this IWebDriver driver, TimeSpan waitTimeout)
         {
             int initialNumberOfTabs = driver.GetNumberOfOpenTabs();
+            var timeoutTime = DateTime.Now.Add(waitTimeout);
+            var currentTime = DateTime.Now;
 
             driver.Close();
 
-            while (driver.GetNumberOfOpenTabs() == initialNumberOfTabs)
+            while (DateTime.Compare(currentTime, timeoutTime) < 0)
             {
+                if (driver.GetNumberOfOpenTabs() < initialNumberOfTabs)
+                {
+                    driver.SwitchTo().Window(driver.WindowHandles.Last());
+                    return;
+                }
+
                 Thread.Sleep(500);
             }
 
-            driver.SwitchTo().Window(driver.WindowHandles.Last());
+            throw new Exception("Timed out waiting for browser tab close!");
         }
 
         public static void EnterText(this IWebElement element, string text)
@@ -46,9 +55,11 @@ namespace SeleniumOmadaFramework.Core.Extensions
                 .Perform();
         }
 
-        public static void OpenLinkInNewTab(this IWebDriver driver, IWebElement link)
+        public static void OpenLinkInNewTab(this IWebDriver driver, IWebElement link, TimeSpan waitTimeout)
         {
             int initialNumberOfTabs = driver.GetNumberOfOpenTabs();
+            var timeoutTime = DateTime.Now.Add(waitTimeout);
+            var currentTime = DateTime.Now;
 
             new Actions(driver)
                 .KeyDown(Keys.Control)
@@ -56,12 +67,18 @@ namespace SeleniumOmadaFramework.Core.Extensions
                 .KeyUp(Keys.Control)
                 .Perform();
 
-            while(driver.GetNumberOfOpenTabs() == initialNumberOfTabs)
+            while(DateTime.Compare(currentTime, timeoutTime) < 0)
             {
+                if (driver.GetNumberOfOpenTabs() > initialNumberOfTabs)
+                {
+                    driver.SwitchTo().Window(driver.WindowHandles.Last());
+                    return;
+                }
+
                 Thread.Sleep(500);
             }
 
-            driver.SwitchTo().Window(driver.WindowHandles.Last());
+            throw new Exception("Timed out waiting for new browser tab!");
         }
 
         public static void ScrollToElement(this IWebDriver driver, IWebElement element)

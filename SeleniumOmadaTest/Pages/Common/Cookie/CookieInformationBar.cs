@@ -1,4 +1,5 @@
-﻿using SeleniumOmadaFramework.Core.Extensions;
+﻿using SeleniumOmadaFramework.Core.Configuration;
+using SeleniumOmadaFramework.Core.Extensions;
 using SeleniumOmadaFramework.Pages.Common.Base;
 using System.Threading;
 
@@ -23,7 +24,8 @@ namespace SeleniumOmadaTest.Pages.Common.Cookie
 
         public void OpenPrivacyPolicyInNewTab()
         {
-            Driver.OpenLinkInNewTab(Map.PrivacyPolicyButton);
+            var newTabWaitTimeout = ConfigReader.NewBrowserTabWaitTimeout;
+            Driver.OpenLinkInNewTab(Map.PrivacyPolicyButton, newTabWaitTimeout);
         }
 
         public void WaitToBeDisplayed()
