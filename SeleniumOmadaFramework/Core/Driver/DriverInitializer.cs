@@ -1,5 +1,6 @@
 ﻿using Autofac;
 using OpenQA.Selenium;
+using SeleniumOmadaFramework.Core.Configuration;
 using SeleniumOmadaFramework.Core.IoC;
 using System;
 
@@ -27,7 +28,7 @@ namespace SeleniumOmadaFramework.Core.Driver
         {
             var driver = BuildContainer.Resolve<IWebDriver>();
 
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromMinutes(1);
+            driver.Manage().Timeouts().ImplicitWait = ConfigReader.SeleniumImplicitWaitTimeout;
             driver.Manage().Window.Maximize();
             driver.Manage().Cookies.DeleteAllCookies();
             driver.Navigate().GoToUrl(url);
