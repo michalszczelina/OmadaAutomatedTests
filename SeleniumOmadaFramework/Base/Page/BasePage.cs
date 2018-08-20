@@ -37,6 +37,8 @@ namespace SeleniumOmadaFramework.Pages.Implementations.Base
             var screenshotFileName = $"{currentDate} {currentTime} [{testName}] {screenName}.png";
             var screenshotPath = Path.Combine(new string[] { screenshotLocation,  screenshotFileName});
 
+            Directory.CreateDirectory(screenshotLocation);
+
             Screenshot ss = ((ITakesScreenshot)Driver).GetScreenshot();
             ss.SaveAsFile(screenshotPath, ScreenshotImageFormat.Png);
 

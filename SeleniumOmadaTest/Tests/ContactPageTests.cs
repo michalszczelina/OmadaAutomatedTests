@@ -14,6 +14,7 @@ namespace SeleniumOmadaTest.Tests
             var screenshotLocation = ConfigReader.ScreenshotsLocation;
 
             var homePage = PageFactory.HomePage;
+            homePage.CookieBar.Close();
             homePage.TopNavigationBar.NavigateToContactPage();
 
             var contactPage = PageFactory.ContactsPage;
