@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2042
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeleniumOmadaTest", "SeleniumOmadaTest\SeleniumOmadaTest.csproj", "{E25FA4A9-D459-4ECE-AFD1-D07D286B28F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeleniumOmadaFramework", "SeleniumOmadaFramework\SeleniumOmadaFramework.csproj", "{32B868CD-F051-4667-A08F-84525CFBFEB3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		LIVE_Chrome|Any CPU = LIVE_Chrome|Any CPU
+		LIVE_ChromeRemote|Any CPU = LIVE_ChromeRemote|Any CPU
+		LIVE_Firefox|Any CPU = LIVE_Firefox|Any CPU
+		LIVE_FireFoxRemote|Any CPU = LIVE_FireFoxRemote|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E25FA4A9-D459-4ECE-AFD1-D07D286B28F7}.LIVE_Chrome|Any CPU.ActiveCfg = LIVE_Chrome|Any CPU
+		{E25FA4A9-D459-4ECE-AFD1-D07D286B28F7}.LIVE_Chrome|Any CPU.Build.0 = LIVE_Chrome|Any CPU
+		{E25FA4A9-D459-4ECE-AFD1-D07D286B28F7}.LIVE_ChromeRemote|Any CPU.ActiveCfg = LIVE_ChromeRemote|Any CPU
+		{E25FA4A9-D459-4ECE-AFD1-D07D286B28F7}.LIVE_ChromeRemote|Any CPU.Build.0 = LIVE_ChromeRemote|Any CPU
+		{E25FA4A9-D459-4ECE-AFD1-D07D286B28F7}.LIVE_Firefox|Any CPU.ActiveCfg = LIVE_Firefox|Any CPU
+		{E25FA4A9-D459-4ECE-AFD1-D07D286B28F7}.LIVE_Firefox|Any CPU.Build.0 = LIVE_Firefox|Any CPU
+		{E25FA4A9-D459-4ECE-AFD1-D07D286B28F7}.LIVE_FireFoxRemote|Any CPU.ActiveCfg = LIVE_FireFoxRemote|Any CPU
+		{E25FA4A9-D459-4ECE-AFD1-D07D286B28F7}.LIVE_FireFoxRemote|Any CPU.Build.0 = LIVE_FireFoxRemote|Any CPU
+		{32B868CD-F051-4667-A08F-84525CFBFEB3}.LIVE_Chrome|Any CPU.ActiveCfg = LIVE_Chrome|Any CPU
+		{32B868CD-F051-4667-A08F-84525CFBFEB3}.LIVE_Chrome|Any CPU.Build.0 = LIVE_Chrome|Any CPU
+		{32B868CD-F051-4667-A08F-84525CFBFEB3}.LIVE_ChromeRemote|Any CPU.ActiveCfg = LIVE_ChromeRemote|Any CPU
+		{32B868CD-F051-4667-A08F-84525CFBFEB3}.LIVE_ChromeRemote|Any CPU.Build.0 = LIVE_ChromeRemote|Any CPU
+		{32B868CD-F051-4667-A08F-84525CFBFEB3}.LIVE_Firefox|Any CPU.ActiveCfg = LIVE_Firefox|Any CPU
+		{32B868CD-F051-4667-A08F-84525CFBFEB3}.LIVE_Firefox|Any CPU.Build.0 = LIVE_Firefox|Any CPU
+		{32B868CD-F051-4667-A08F-84525CFBFEB3}.LIVE_FireFoxRemote|Any CPU.ActiveCfg = LIVE_FireFoxRemote|Any CPU
+		{32B868CD-F051-4667-A08F-84525CFBFEB3}.LIVE_FireFoxRemote|Any CPU.Build.0 = LIVE_FireFoxRemote|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {892C35FB-72D7-4374-B78B-3DFF9C58E461}
+	EndGlobalSection
+EndGlobal

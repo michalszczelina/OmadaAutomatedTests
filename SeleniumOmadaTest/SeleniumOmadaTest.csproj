@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\NUnit3TestAdapter.3.10.0\build\net35\NUnit3TestAdapter.props" Condition="Exists('..\packages\NUnit3TestAdapter.3.10.0\build\net35\NUnit3TestAdapter.props')" />
+  <Import Project="..\packages\NUnit.3.10.1\build\NUnit.props" Condition="Exists('..\packages\NUnit.3.10.1\build\NUnit.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E25FA4A9-D459-4ECE-AFD1-D07D286B28F7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SeleniumOmadaTest</RootNamespace>
+    <AssemblyName>SeleniumOmadaTest</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'LIVE_Chrome|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\LIVE_Chrome\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'LIVE_Firefox|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\LIVE_Firefox\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'LIVE_ChromeRemote|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\LIVE_ChromeRemote\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'LIVE_FireFoxRemote|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\LIVE_FireFoxRemote\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=4.8.1.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.8.1\lib\net45\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=3.10.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.10.1\lib\net45\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WebDriver, Version=3.14.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.WebDriver.3.14.0\lib\net45\WebDriver.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\DownloadCasesPdfDataModel.cs" />
+    <Compile Include="Pages\Common\Cookie\CookieInformationBar.cs" />
+    <Compile Include="Pages\Common\Cookie\CookieInformationMap.cs" />
+    <Compile Include="Pages\Common\FooterRow\FooterRowBar.cs" />
+    <Compile Include="Pages\Common\FooterRow\FooterRowMap.cs" />
+    <Compile Include="Pages\Common\Header\HeaderMap.cs" />
+    <Compile Include="Pages\Common\Header\HeaderMenu.cs" />
+    <Compile Include="Pages\Common\Navigation\Menus\More\MoreMap.cs" />
+    <Compile Include="Pages\Common\Navigation\Menus\More\MoreMenu.cs" />
+    <Compile Include="Pages\Common\Serach\SearchHeader.cs" />
+    <Compile Include="Pages\Common\Serach\SearchMap.cs" />
+    <Compile Include="Pages\Common\TopNavigation\TopNavigationBar.cs" />
+    <Compile Include="Pages\Common\TopNavigation\TopNavigationMap.cs" />
+    <Compile Include="Pages\Implementations\Article\ArticleMap.cs" />
+    <Compile Include="Pages\Implementations\Article\ArticlePage.cs" />
+    <Compile Include="Pages\Implementations\Base\BaseOmadaMap.cs" />
+    <Compile Include="Pages\Common\Navigation\Menus\BusinessValue\BusinessValueMap.cs" />
+    <Compile Include="Pages\Common\Navigation\Menus\BusinessValue\BusinessValueMenu.cs" />
+    <Compile Include="Pages\Common\Navigation\NavigationBar.cs" />
+    <Compile Include="Pages\Common\Navigation\NavigationMap.cs" />
+    <Compile Include="Pages\Implementations\Base\BaseOmadaPage.cs" />
+    <Compile Include="Pages\Implementations\Base\IBaseOmadaPageInterface.cs" />
+    <Compile Include="Pages\Implementations\Cases\CasesMap.cs" />
+    <Compile Include="Pages\Implementations\Cases\CasesPage.cs" />
+    <Compile Include="Pages\Implementations\Contact\ContactMap.cs" />
+    <Compile Include="Pages\Implementations\Contact\ContactPage.cs" />
+    <Compile Include="Pages\Implementations\Contact\Enums\ContactCountries.cs" />
+    <Compile Include="Pages\Implementations\Contact\Tabs\TabMenuElement.cs" />
+    <Compile Include="Pages\Implementations\Contact\Tabs\TabMenuMap.cs" />
+    <Compile Include="Pages\Implementations\DownloadPdf\DownloadPdfMap.cs" />
+    <Compile Include="Pages\Implementations\DownloadPdf\DownloadPdfPage.cs" />
+    <Compile Include="Pages\Implementations\DownloadPdf\FinalizeDownload\FinalizePdfDownloadMap.cs" />
+    <Compile Include="Pages\Implementations\DownloadPdf\FinalizeDownload\FinalizePdfDownloadPage.cs" />
+    <Compile Include="Pages\Implementations\DownloadPdf\UnlockSlider\UnlockSliderElement.cs" />
+    <Compile Include="Pages\Implementations\DownloadPdf\UnlockSlider\UnlockSliderMap.cs" />
+    <Compile Include="Pages\Implementations\Home\HomeMap.cs" />
+    <Compile Include="Pages\Implementations\Home\HomePage.cs" />
+    <Compile Include="Pages\Implementations\News\NewsMap.cs" />
+    <Compile Include="Pages\Implementations\News\NewsPage.cs" />
+    <Compile Include="Pages\Implementations\PrivacyPolicy\PrivacyPolicyMap.cs" />
+    <Compile Include="Pages\Implementations\PrivacyPolicy\PrivacyPolicyPage.cs" />
+    <Compile Include="Pages\Implementations\SearchResults\SearchResultsMap.cs" />
+    <Compile Include="Pages\Implementations\SearchResults\SearchResultsPage.cs" />
+    <Compile Include="Pages\Factory\PageFactory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestData\DownloadPdfDataRepository.cs" />
+    <Compile Include="Tests\BaseTest.cs" />
+    <Compile Include="Tests\CloseCookiesTests.cs" />
+    <Compile Include="Tests\ContactPageTests.cs" />
+    <Compile Include="Tests\DownloadPdfTests.cs" />
+    <Compile Include="Tests\LoadHomePageTests.cs" />
+    <Compile Include="Tests\SearchForArticleTests.cs" />
+    <Compile Include="Tests\Validation\ArticlePageAssert.cs" />
+    <Compile Include="Tests\Validation\ArticleSearchResultsPageAssert.cs" />
+    <Compile Include="Tests\Validation\Base\AssertWithLog4Net.cs" />
+    <Compile Include="Tests\Validation\Base\FailedTestLogMessage.cs" />
+    <Compile Include="Tests\Validation\ContactPageAssert.cs" />
+    <Compile Include="Tests\Validation\CookieBarAssert.cs" />
+    <Compile Include="Tests\Validation\HomePageAssert.cs" />
+    <Compile Include="Tests\Validation\NewsPageAssert.cs" />
+    <Compile Include="Tests\Validation\PdfFileDownloadAssert.cs" />
+    <Compile Include="Tests\Validation\PrivacyPolicyPageAssert.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="App.LIVE_Chrome.config">
+      <DependentUpon>App.config</DependentUpon>
+    </None>
+    <None Include="App.LIVE_ChromeRemote.config">
+      <DependentUpon>App.config</DependentUpon>
+    </None>
+    <None Include="App.LIVE_Firefox.config">
+      <DependentUpon>App.config</DependentUpon>
+    </None>
+    <None Include="App.LIVE_FireFoxRemote.config">
+      <DependentUpon>App.config</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SeleniumOmadaFramework\SeleniumOmadaFramework.csproj">
+      <Project>{32B868CD-F051-4667-A08F-84525CFBFEB3}</Project>
+      <Name>SeleniumOmadaFramework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\NUnit.3.10.1\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit.3.10.1\build\NUnit.props'))" />
+    <Error Condition="!Exists('..\packages\NUnit3TestAdapter.3.10.0\build\net35\NUnit3TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit3TestAdapter.3.10.0\build\net35\NUnit3TestAdapter.props'))" />
+    <Error Condition="!Exists('..\packages\Selenium.Chrome.WebDriver.2.40\build\Selenium.Chrome.WebDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.Chrome.WebDriver.2.40\build\Selenium.Chrome.WebDriver.targets'))" />
+  </Target>
+  <Import Project="..\packages\Selenium.Chrome.WebDriver.2.40\build\Selenium.Chrome.WebDriver.targets" Condition="Exists('..\packages\Selenium.Chrome.WebDriver.2.40\build\Selenium.Chrome.WebDriver.targets')" />
+  <UsingTask TaskName="TransformXml" AssemblyFile="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Web\Microsoft.Web.Publishing.Tasks.dll" />
+  <Target Name="App_config_AfterCompile" AfterTargets="AfterCompile" Condition="Exists('App.$(Configuration).config')">
+    <!--Generate transformed app config in the intermediate directory-->
+    <TransformXml Source="App.config" Destination="$(IntermediateOutputPath)$(TargetFileName).config" Transform="App.$(Configuration).config" />
+    <!--Force build process to use the transformed configuration file from now on.-->
+    <ItemGroup>
+      <AppConfigWithTargetPath Remove="App.config" />
+      <AppConfigWithTargetPath Include="$(IntermediateOutputPath)$(TargetFileName).config">
+        <TargetPath>$(TargetFileName).config</TargetPath>
+      </AppConfigWithTargetPath>
+    </ItemGroup>
+  </Target>
+  <!--Override After Publish to support ClickOnce AfterPublish. Target replaces the untransformed config file copied to the deployment directory with the transformed one.-->
+  <Target Name="App_config_AfterPublish" AfterTargets="AfterPublish" Condition="Exists('App.$(Configuration).config')">
+    <PropertyGroup>
+      <DeployedConfig>$(_DeploymentApplicationDir)$(TargetName)$(TargetExt).config$(_DeploymentFileMappingExtension)</DeployedConfig>
+    </PropertyGroup>
+    <!--Publish copies the untransformed App.config to deployment directory so overwrite it-->
+    <Copy Condition="Exists('$(DeployedConfig)')" SourceFiles="$(IntermediateOutputPath)$(TargetFileName).config" DestinationFiles="$(DeployedConfig)" />
+  </Target>
+</Project>
